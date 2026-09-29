@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Gina Marie Boquecosa, Virtual Assistant with 5 years of QA testing experience. Based in Mandaue City, Cebu.">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Gina Boquecosa, Virtual Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style id="css">
+/* Layout: single column résumé-page, sections read like a tester's checklist (case ID · task · status) */
+:root{
+  --bg:#F4F6F5; --surface:#FFFFFF; --fg:#15211E; --muted:#56655F; --line:#D9E1DD;
+  --accent:#0E6B62; --accent-soft:#DDEEEA; --warm:#B4531A; --pass:#1C7C3A; --danger:#B42318;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1614; --surface:#16201D; --fg:#E6EEEB; --muted:#9AAAA4; --line:#26332F;
+  --accent:#4FC2B3; --accent-soft:#1B3330; --warm:#F0A064; --pass:#6FD28C; --danger:#F97066; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1614; --surface:#16201D; --fg:#E6EEEB; --muted:#9AAAA4; --line:#26332F;
+  --accent:#4FC2B3; --accent-soft:#1B3330; --warm:#F0A064; --pass:#6FD28C; --danger:#F97066; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1rem;line-height:1.6;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding-inline:20px;padding-block:40px 110px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.1}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:700}
+h3{font-size:1.1rem;font-weight:700}
+p{margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+section{display:flex;flex-direction:column;gap:24px}
+.sec-head{display:flex;flex-direction:column;gap:8px;max-width:62ch}
+
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end;padding-top:16px}
+.hero h1{font-size:clamp(2.4rem,6.5vw,4.4rem);font-weight:800;letter-spacing:-.02em;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{font-size:1.15rem;max-width:52ch;margin-top:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{font:600 .95rem var(--body);padding:12px 20px;border-radius:999px;border:1.5px solid var(--accent);background:var(--accent);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.idcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px;font-size:.92rem}
+.idcard .name{font-family:var(--display);font-size:1.35rem;font-weight:700}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}
+.kv dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.kv dd{margin:0}
+.tag{display:inline-block;font-family:var(--mono);font-size:.72rem;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+
+.bridge{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.bridge > div{background:var(--surface);padding:20px 22px;display:flex;flex-direction:column;gap:6px;min-width:0;position:relative}
+.bridge .from{font-family:var(--mono);font-size:.78rem;color:var(--warm)}
+
+.cases{border-top:1px solid var(--line)}
+.case{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);position:relative}
+.case .id{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.case p{color:var(--muted);margin-top:4px;max-width:60ch}
+.status{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--pass);white-space:nowrap}
+.status::before{content:"✓ "}
+
+.exp{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px}
+.exp-side{display:flex;flex-direction:column;gap:6px}
+.exp-side .role{font-family:var(--display);font-size:1.25rem;font-weight:700;line-height:1.2}
+.exp ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:8px}
+.exp li{position:relative}
+.domains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.domain{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--surface);display:flex;flex-direction:column;gap:6px;min-width:0;position:relative}
+.domain p{font-size:.9rem;color:var(--muted)}
+.domain .va{font-size:.85rem;border-top:1px dashed var(--line);padding-top:8px;margin-top:auto;display:flex;flex-direction:column}
+.domain .va small{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;color:var(--warm);font-weight:600}
+
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.skills > div{position:relative;min-width:0}
+.skills ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.skills li{padding-left:18px;position:relative}
+.skills li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border:1.5px solid var(--accent);border-radius:2px}
+
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+blockquote{margin:0;padding:22px;border-left:3px solid var(--warm);background:var(--surface);border-radius:0 12px 12px 0;display:flex;flex-direction:column;gap:12px;min-width:0;position:relative}
+blockquote p{font-size:1.02rem}
+.quotes blockquote:first-child:nth-last-child(odd){grid-column:1/-1}
+blockquote cite a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+blockquote cite{font-style:normal;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+
+.contact{background:var(--accent);color:var(--bg);border-radius:18px;padding:36px 28px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.contact h2{color:var(--bg);font-size:clamp(1.8rem,4vw,2.5rem)}
+.contact p{opacity:.9;margin-top:10px}
+.clist{display:flex;flex-direction:column;gap:10px}
+.crow{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(0,0,0,.14);border-radius:10px;padding:10px 14px;min-width:0;position:relative}
+.crow > div{min-width:0}
+.crow .v{font-family:var(--mono);font-size:.9rem;overflow-wrap:anywhere}
+.crow small{display:block;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.copy{font:600 .75rem var(--body);background:var(--bg);color:var(--accent);border:0;border-radius:999px;padding:6px 12px;cursor:pointer;flex-shrink:0}
+footer{font-size:.85rem;color:var(--muted);text-align:center}
+
+/* Edit mode */
+.toolbar{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px;box-shadow:0 6px 24px rgba(0,0,0,.12);z-index:10;max-width:calc(100% - 32px);flex-wrap:wrap}
+.toolbar .btn{padding:8px 16px;font-size:.85rem}
+.toolbar .msg{font-size:.8rem;color:var(--muted);padding:0 8px}
+body.editing [data-k]{outline:1.5px dashed color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:2px;border-radius:3px;cursor:text;min-width:1ch}
+body.editing [data-k]:focus{outline:2px solid var(--accent);background:var(--accent-soft)}
+body.editing .contact [data-k]{outline-color:color-mix(in srgb,var(--bg) 70%,transparent)}
+body.editing .contact [data-k]:focus{background:rgba(0,0,0,.2)}
+.ed{display:none}
+body.editing .ed{display:inline-flex}
+.del{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--danger);font:600 .9rem var(--body);align-items:center;justify-content:center;cursor:pointer;z-index:2}
+.add{font:600 .8rem var(--body);color:var(--accent);background:transparent;border:1.5px dashed var(--accent);border-radius:999px;padding:6px 14px;cursor:pointer;align-self:flex-start;margin-top:4px}
+.contact .add{color:var(--bg);border-color:var(--bg)}
+.hint{font-size:.85rem;background:var(--accent-soft);color:var(--fg);border-radius:10px;padding:10px 14px}
+
+@media (max-width:760px){
+  .hero,.exp,.contact{grid-template-columns:1fr}
+  .domains,.skills{grid-template-columns:1fr 1fr}
+  .quotes,.bridge{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .domains,.skills{grid-template-columns:1fr}
+  .case{grid-template-columns:1fr auto;gap:4px 12px}
+  .case .id{grid-column:1/-1}
+}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<div id="app"></div>
+
+<script type="application/json" id="state">{
+"hero":{"eyebrow":"Virtual Assistant · Cebu, Philippines","h1":"Five years of catching bugs. Now I catch the","h1Accent":"details in your day.","lead":"I'm Gina, a Virtual Assistant starting out after 5 years as a QA Tester. I bring a tester's habits to admin work: careful checking, clear documentation, and follow-through until every item is done.","cta1":"Work with me","cta2":"See services"},
+"profile":{"name":"Gina Marie Boquecosa","role":"Beginner Virtual Assistant","status":"Open to clients","rows":[{"k":"Background","v":"QA Tester / QA Specialist, 5 yrs"},{"k":"Based in","v":"Mandaue City, Cebu (GMT+8)"},{"k":"Works","v":"Remotely, flexible hours"}]},
+"why":{"eyebrow":"Why a QA tester makes a good VA","title":"The skills already transfer","intro":"Testing software is detail work, process work, and communication work. So is running someone's inbox and calendar.","items":[
+{"from":"In QA I wrote test cases","title":"I document processes","text":"Step-by-step SOPs and checklists so tasks get done the same way every time."},
+{"from":"In QA I logged and tracked bugs","title":"I track tasks to done","text":"Nothing gets lost. Every request has a status, an owner, and a follow-up."},
+{"from":"In QA I verified every result","title":"I double-check my work","text":"Data, emails, and bookings get reviewed before they go out."},
+{"from":"In QA I worked with dev, design & compliance","title":"I communicate clearly","text":"Short, clear updates. I flag blockers early and keep you informed."}]},
+"services":{"eyebrow":"Services","title":"What I can take off your plate","items":[
+{"title":"Email & inbox management","text":"Sort, label, and reply to routine messages. Flag what needs your attention.","status":"READY"},
+{"title":"Calendar & appointment scheduling","text":"Book meetings, send reminders, and handle reschedules across time zones.","status":"READY"},
+{"title":"Data entry & spreadsheet upkeep","text":"Accurate entry, clean-up, and checking of records, lists, and trackers.","status":"READY"},
+{"title":"Documentation & SOP writing","text":"Turn how you work into clear written guides your team can follow.","status":"READY"},
+{"title":"Online research","text":"Find and summarize information on tools, vendors, leads, or competitors.","status":"READY"},
+{"title":"Website & app checks","text":"My specialty: test your site, forms, checkout, and links before customers find the problems.","status":"READY"},
+{"title":"Customer support basics","text":"Answer common questions, log issues, and pass tricky ones to the right person.","status":"READY"}]},
+"exp":{"eyebrow":"Work experience","title":"Quality Assurance Tester","role":"QA Software Tester / QA Specialist","years":"5 years · Agile teams","where":"Worked with Codev and Intelycare","bullets":[
+"Wrote and ran detailed test cases for smoke, functional, integration, regression, and end-to-end testing.",
+"Verified bug reports, reproduced issues, and helped trace them to their root cause.",
+"Planned and ran User Acceptance Testing (UAT) with business stakeholders.",
+"Coordinated daily with developers, designers, legal, and compliance teams.",
+"Reported results and gave clear, actionable recommendations.",
+"Worked in Azure environments and enterprise applications."],
+"domains":[
+{"title":"Healthcare billing","text":"Invoicing, claims processing, and payment reconciliation.","va":"Comfortable with billing and admin workflows."},
+{"title":"Healthcare clinical","text":"Patient portals, appointment systems, HIPAA-compliant data flows.","va":"Careful with sensitive and private data."},
+{"title":"E-commerce","text":"Product search, checkout, and payment integrations.","va":"Knows how online stores work end to end."},
+{"title":"Law firm software","text":"Case management, documents, and legal billing.","va":"Used to strict accuracy and confidentiality."},
+{"title":"Community online hub","text":"Event registration, resource library, and user feedback.","va":"Event and sign-up process experience."},
+{"title":"Construction platform","text":"Bidding and scheduling flows for contractors and clients.","va":"Understands scheduling and client coordination."}]},
+"skills":{"eyebrow":"Skills","title":"What I bring","groups":[
+{"title":"Organization","items":["Process documentation","Task tracking & reporting","Planning and prioritizing","Attention to detail"]},
+{"title":"Problem solving","items":["Analytical thinking","Root cause analysis","Resourcefulness","Business-focused mindset"]},
+{"title":"People","items":["Cross-functional teamwork","Clear, positive communication","Self-motivated & reliable","Leadership"]}]},
+"quotes":{"eyebrow":"Testimonials","title":"What people I've worked with say","items":[
+{"text":"I've worked with Gina as her test lead under the same team way back when I was in MVP.dev (Brooks Software Services). She was a tester under my wing in our projects and I was the one responsible for instilling to her some of the software testing fundamentals and other technical testing skills during her time in MVP. As for her dynamics with the team, I can whole heartedly say that [she's] one person you could rely on and is easy to get along with. As for skills wise, her constant drive to learn new things is probably one for her good qualities as a tester, she is also someone who you can depend on to finish the tasks assigned on tight schedules and is dedicated to deliver her tasks with quality.","cite":"Jerry Roddie II Abrigana, Test Lead at MVP","url":"https://www.linkedin.com/in/jerry-roddie-ii-abrigana-778233200/"},
+{"text":"Gina is a good QA member. She has picked up testing of key features of the application and is always helpful during testing.","cite":"Intelycare"},
+{"text":"She consistently attends our scheduled meetings and actively participates in team activities. She keeps me informed about her whereabouts, always giving a heads up when necessary.","cite":"Marvin Umayam, Supervisor at Codev"}]},
+"contact":{"title":"Let's work together","text":"Tell me what's filling up your week and how I can help.","rows":[
+{"label":"Email","value":"gianboq@gmail.com"},
+{"label":"Mobile","value":"0976 317 5457"},
+{"label":"Mobile (alt)","value":"0912 567 5286"},
+{"label":"Location","value":"Mandaue City, Cebu, PH"}]},
+"footer":"Gina Marie Boquecosa · Virtual Assistant"
+}</script>
+
+<script id="app-js">
+(function(){
+var FONTS='<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">';
+var saved=JSON.parse(document.getElementById('state').textContent);
+var S=JSON.parse(JSON.stringify(saved));
+var editing=false, dirty=false, api=null;
+
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function get(p){return p.split('.').reduce(function(o,k){return o==null?o:o[k]},S)}
+function set(p,v){var ks=p.split('.'),o=S;for(var i=0;i<ks.length-1;i++)o=o[ks[i]];o[ks[ks.length-1]]=v}
+function t(tag,p,cls){return '<'+tag+(cls?' class="'+cls+'"':'')+' data-k="'+p+'">'+esc(get(p))+'</'+tag+'>'}
+function del(p){return '<button class="ed del" type="button" data-del="'+p+'" aria-label="Remove">×</button>'}
+function add(p,label){return '<button class="ed add" type="button" data-add="'+p+'">+ '+label+'</button>'}
+function pad(n){return (n<9?'0':'')+(n+1)}
+
+function render(){
+  var h='<div class="wrap">';
+  if(editing) h+='<p class="hint">Edit mode: click any outlined text to change it. Use + to add items and × to remove them. Press Save when you are done.</p>';
+  // hero
+  h+='<header class="hero"><div>'+t('span','hero.eyebrow','eyebrow')+
+     '<h1><span data-k="hero.h1">'+esc(S.hero.h1)+'</span> <em data-k="hero.h1Accent">'+esc(S.hero.h1Accent)+'</em></h1>'+
+     t('p','hero.lead','lead')+
+     '<div class="cta"><a class="btn" href="#contact"><span data-k="hero.cta1">'+esc(S.hero.cta1)+'</span></a><a class="btn ghost" href="#services"><span data-k="hero.cta2">'+esc(S.hero.cta2)+'</span></a></div></div>'+
+     '<aside class="idcard" aria-label="Profile summary"><div>'+t('div','profile.name','name')+t('div','profile.role','muted')+'</div><dl class="kv">';
+  S.profile.rows.forEach(function(r,i){h+='<dt data-k="profile.rows.'+i+'.k">'+esc(r.k)+'</dt><dd><span data-k="profile.rows.'+i+'.v">'+esc(r.v)+'</span> '+del('profile.rows.'+i)+'</dd>'});
+  h+='<dt>Status</dt><dd><span class="tag" data-k="profile.status">'+esc(S.profile.status)+'</span></dd></dl>'+add('profile.rows','Add detail')+'</aside></header>';
+  // why
+  h+='<section aria-label="Why"><div class="sec-head">'+t('span','why.eyebrow','eyebrow')+t('h2','why.title')+t('p','why.intro','muted')+'</div><div class="bridge">';
+  S.why.items.forEach(function(x,i){var b='why.items.'+i;h+='<div>'+del(b)+t('span',b+'.from','from')+t('h3',b+'.title')+t('p',b+'.text','muted')+'</div>'});
+  h+='</div>'+add('why.items','Add strength')+'</section>';
+  // services
+  h+='<section id="services" aria-label="Services"><div class="sec-head">'+t('span','services.eyebrow','eyebrow')+t('h2','services.title')+'</div><div class="cases">';
+  S.services.items.forEach(function(x,i){var b='services.items.'+i;h+='<div class="case"><span class="id">VA-'+pad(i)+'</span><div>'+t('h3',b+'.title')+t('p',b+'.text')+'</div><span class="status"><span data-k="'+b+'.status">'+esc(x.status)+'</span></span>'+del(b)+'</div>'});
+  h+='</div>'+add('services.items','Add service')+'</section>';
+  // experience
+  h+='<section aria-label="Experience"><div class="sec-head">'+t('span','exp.eyebrow','eyebrow')+t('h2','exp.title')+'</div><div class="exp"><div class="exp-side">'+t('span','exp.role','role')+t('span','exp.years','muted')+t('span','exp.where','muted')+'</div><div><ul>';
+  S.exp.bullets.forEach(function(x,i){h+='<li><span data-k="exp.bullets.'+i+'">'+esc(x)+'</span> '+del('exp.bullets.'+i)+'</li>'});
+  h+='</ul>'+add('exp.bullets','Add duty')+'</div></div><div class="domains">';
+  S.exp.domains.forEach(function(x,i){var b='exp.domains.'+i;h+='<div class="domain">'+del(b)+t('h3',b+'.title')+t('p',b+'.text')+'<span class="va"><small>VA VALUE</small><span data-k="'+b+'.va">'+esc(x.va)+'</span></span></div>'});
+  h+='</div>'+add('exp.domains','Add project')+'</section>';
+  // skills
+  h+='<section aria-label="Skills"><div class="sec-head">'+t('span','skills.eyebrow','eyebrow')+t('h2','skills.title')+'</div><div class="skills">';
+  S.skills.groups.forEach(function(g,i){var b='skills.groups.'+i;h+='<div>'+del(b)+t('h3',b+'.title')+'<ul>';
+    g.items.forEach(function(x,j){h+='<li><span data-k="'+b+'.items.'+j+'">'+esc(x)+'</span> '+del(b+'.items.'+j)+'</li>'});
+    h+='</ul>'+add(b+'.items','Add skill')+'</div>'});
+  h+='</div>'+add('skills.groups','Add skill group')+'</section>';
+  // quotes
+  h+='<section aria-label="Testimonials"><div class="sec-head">'+t('span','quotes.eyebrow','eyebrow')+t('h2','quotes.title')+'</div><div class="quotes">';
+  S.quotes.items.forEach(function(x,i){var b='quotes.items.'+i;h+='<blockquote>'+del(b)+'<p>"<span data-k="'+b+'.text">'+esc(x.text)+'</span>"</p>'+(x.url&&!editing?'<cite><a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.cite)+'</a></cite>':t('cite',b+'.cite'))+'</blockquote>'});
+  h+='</div>'+add('quotes.items','Add testimonial')+'</section>';
+  // contact
+  h+='<section id="contact" class="contact" aria-label="Contact"><div>'+t('h2','contact.title')+t('p','contact.text')+'</div><div class="clist">';
+  S.contact.rows.forEach(function(r,i){var b='contact.rows.'+i;h+='<div class="crow"><div>'+t('small',b+'.label')+t('span',b+'.value','v')+'</div>'+(editing?del(b):'<button class="copy" type="button" data-copy="'+i+'">Copy</button>')+'</div>'});
+  h+=add('contact.rows','Add contact')+'</div></section>';
+  h+='<footer>'+t('span','footer')+'</footer></div>';
+  if(api) h+=editing
+    ? '<div class="toolbar"><span class="msg" id="msg">'+(dirty?'Unsaved changes':'No changes yet')+'</span><button class="btn ghost" type="button" id="cancel">Cancel</button><button class="btn" type="button" id="save">Save</button></div>'
+    : '<div class="toolbar"><button class="btn" type="button" id="edit">Edit page</button></div>';
+  document.getElementById('app').innerHTML=h;
+  document.body.classList.toggle('editing',editing);
+  if(editing) document.querySelectorAll('[data-k]').forEach(function(el){el.setAttribute('contenteditable','plaintext-only');if(el.contentEditable!=='plaintext-only')el.setAttribute('contenteditable','true')});
+}
+
+function mark(){dirty=true;var m=document.getElementById('msg');if(m)m.textContent='Unsaved changes'}
+var NEW={
+  'profile.rows':{k:'Label',v:'Detail'},
+  'why.items':{from:'In QA I …',title:'New strength',text:'Describe how it helps a client.'},
+  'services.items':{title:'New service',text:'Describe the service.',status:'READY'},
+  'exp.bullets':'New duty',
+  'exp.domains':{title:'New project',text:'What you tested.',va:'How it helps as a VA.'},
+  'skills.groups':{title:'New group',items:['New skill']},
+  'quotes.items':{text:'Testimonial text.',cite:'Name, Company'},
+  'contact.rows':{label:'Label',value:'Value'}
+};
+function tpl(p){return NEW[p]!==undefined?NEW[p]:'New skill'}
+
+var app=document.getElementById('app');
+app.addEventListener('input',function(e){var el=e.target.closest('[data-k]');if(!el)return;set(el.dataset.k,el.textContent.replace(/ /g,' ').trim());mark()});
+app.addEventListener('paste',function(e){if(!editing)return;var el=e.target.closest('[data-k]');if(!el)return;e.preventDefault();var tx=(e.clipboardData||window.clipboardData).getData('text');document.execCommand('insertText',false,tx)});
+app.addEventListener('keydown',function(e){if(editing&&e.key==='Enter'&&e.target.closest('[data-k]')){e.preventDefault();e.target.blur()}});
+app.addEventListener('click',function(e){
+  var a=e.target.closest('a');if(editing&&a&&e.target.closest('[data-k]')){e.preventDefault();return}
+  var b=e.target.closest('button');if(!b)return;
+  if(b.dataset.del){var ks=b.dataset.del.split('.'),i=+ks.pop(),arr=get(ks.join('.'));arr.splice(i,1);mark();render();return}
+  if(b.dataset.add){get(b.dataset.add).push(JSON.parse(JSON.stringify(tpl(b.dataset.add))));mark();render();return}
+  if(b.dataset.copy){var v=S.contact.rows[+b.dataset.copy].value;var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+    var sel=function(){var s=b.parentNode.querySelector('.v');var r=document.createRange();r.selectNodeContents(s);var w=getSelection();w.removeAllRanges();w.addRange(r);b.textContent='Selected'};
+    try{navigator.clipboard.writeText(v.replace(/\s(?=\d)/g,'')).then(done,sel)}catch(x){sel()}return}
+  if(b.id==='edit'){editing=true;dirty=false;render();return}
+  if(b.id==='cancel'){S=JSON.parse(JSON.stringify(saved));editing=false;dirty=false;render();return}
+  if(b.id==='save'){save(b)}
+});
+
+function buildDoc(){
+  var resetEl=document.head&&document.head.querySelector('style');
+  var reset=resetEl?resetEl.textContent:'';
+  var json=JSON.stringify(S,null,1).replace(/</g,'\\u003c');
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+reset+'</style></head><body>'+
+    '<title>'+esc(document.title)+'</title>'+FONTS+
+    '<style id="css">'+document.getElementById('css').textContent+'</style>'+
+    '<div id="app"></div>'+
+    '<script type="application/json" id="state">'+json+'<\/script>'+
+    '<script id="app-js">'+document.getElementById('app-js').textContent+'<\/script>'+
+    '</body></html>';
+}
+function save(btn){
+  if(!dirty){editing=false;render();return}
+  var m=document.getElementById('msg');btn.disabled=true;if(m)m.textContent='Saving…';
+  api.publish(buildDoc()).then(function(){if(m)m.textContent='Saved'},function(err){
+    btn.disabled=false;var c=err&&err.code;
+    if(c==='conflict'){if(m)m.textContent='A newer version was saved. Reloading…'}
+    else if(c==='not_writer'||c==='not_granted'||c==='not_declared'||c==='capability_disabled'||c==='consent_required'){api=null;editing=false;render()}
+    else if(c==='rate_limited'){if(m)m.textContent='Saving too often. Wait a moment, then press Save.'}
+    else if(c==='too_large'){if(m)m.textContent='The page is too large to save. Remove some items.'}
+    else{if(m)m.textContent='Could not save. Press Save to try again.'}
+  });
+}
+
+render();
+if(window.claude&&window.claude.use){
+  window.claude.use('artifact').then(function(a){
+    if(!a)return;
+    var ok=function(yes){if(yes){api=a;render()}};
+    window.claude.use('user').then(function(u){if(u&&u.canEdit)u.canEdit().then(ok,function(){ok(true)});else ok(true)},function(){ok(true)});
+  },function(){});
+}
+})();
+</script>
+
+</body>
+</html>
